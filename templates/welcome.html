@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Welcome | ShadowNet{% endblock %}
+{% block content %}
+<section class="welcome">
+  <div class="loader-ring"></div>
+  <p class="eyebrow">IDENTITY VERIFIED</p>
+  <h1>Welcome, {{ user['name'] }}.</h1>
+  <p>Preparing your ShadowNet Master Class.</p>
+  <div class="progress"><span></span></div>
+  <small>Loading your learning environment...</small>
+</section>
+<script>
+setTimeout(() => window.location.href = "{{ url_for('dashboard') }}", 5000);
+</script>
+{% endblock %}

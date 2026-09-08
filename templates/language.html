@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ name }} | ShadowNet{% endblock %}
+{% block content %}
+<section class="course-head">
+  <a class="back" href="{{ url_for('dashboard') }}">← Back to languages</a>
+  <p class="eyebrow">COURSE TRACK</p>
+  <h1>{{ name }}</h1>
+  <p>Open a topic to read the notes, example, and special tip.</p>
+</section>
+<div class="topic-list">
+{% for title, level, notes, example, tip in topics %}
+<details class="topic {% if level == 'professional' %}locked{% endif %}">
+  <summary><span class="level {{ level }}">{{ level|upper }}</span><span class="topic-title">{{ title }}</span><span>+</span></summary>
+  <div class="topic-body">
+    {% if level == 'professional' and not user['is_premium'] %}
+      <div class="lock-box"><span>🔒</span><div><h3>Professional notes are Premium</h3><p>You must purchase Premium to open the complete professional lesson.</p><a class="btn primary" href="{{ url_for('premium') }}">Upgrade to Premium</a></div></div>
+    {% else %}
+      <h3>Notes</h3><p>{{ notes }}</p>
+      <h3>Example</h3><pre><code>{{ example }}</code></pre>
+      <div class="tip-box"><strong>Special tip</strong><p>{{ tip }}</p></div>
+    {% endif %}
+  </div>
+</details>
+{% endfor %}
+</div>
+{% include "ai.html" %}
+{% endblock %}
+{% block scripts %}<script>window.SHADOWNET_LANGUAGE={{ name|tojson }};</script>{% endblock %}

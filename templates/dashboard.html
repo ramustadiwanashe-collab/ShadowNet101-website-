@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Master Class | ShadowNet{% endblock %}
+{% block content %}
+<section class="dashboard-head">
+  <div><p class="eyebrow">SHADOWNET MASTER CLASS</p><h1>Choose your language.</h1><p class="lead">Start at zero. Build toward semi-professional practice.</p></div>
+  <div class="status-card"><span>AI MODE</span><strong>GPT-5</strong><small>Assistant ready</small></div>
+</section>
+<div class="language-grid large">
+{% for lang in languages %}
+<a class="language-card" href="{{ url_for('language', name=lang) }}"><span class="code-icon">&lt;/&gt;</span><div><h3>{{ lang }}</h3><p>Open course notes and examples</p></div><span>→</span></a>
+{% endfor %}
+</div>
+<section class="notice premium-banner"><div><p class="eyebrow">PREMIUM</p><h2>Professional notes are locked.</h2><p>Complete the free path first, then upgrade for the Professional Master Class.</p></div><a class="btn primary" href="{{ url_for('premium') }}">View Premium</a></section>
+{% endblock %}

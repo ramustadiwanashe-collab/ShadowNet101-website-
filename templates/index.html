@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}ShadowNet | Programming Master Class{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">SECURE CODING EDUCATION · EST. 2017</p>
+    <h1>Learn code.<br><span>Build real systems.</span></h1>
+    <p class="lead">A structured programming master class from first principles to semi-professional practice, with examples, special tips, progress tracking, and an AI coding assistant.</p>
+    <div class="actions">
+      <a class="btn primary" href="{{ url_for('register') }}">Start learning</a>
+      <a class="btn ghost" href="{{ url_for('login') }}">Sign in</a>
+    </div>
+  </div>
+  <div class="terminal-card">
+    <div class="terminal-top"><i></i><i></i><i></i><span>shadownet@academy</span></div>
+    <pre><code>$ shadownet --learn
+[OK] identity verified
+[OK] course loaded
+[OK] AI assistant online
+[READY] choose your language</code></pre>
+  </div>
+</section>
+<section class="section">
+  <div class="section-head"><div><p class="eyebrow">THE LIBRARY</p><h2>Programming languages</h2></div><span class="pill">12 tracks</span></div>
+  <div class="language-grid">
+  {% for lang in languages %}
+    <a class="language-card" href="{{ url_for('register') }}">
+      <span class="code-icon">&lt;/&gt;</span><div><h3>{{ lang }}</h3><p>Beginner → Semi-pro → Professional</p></div><span>›</span>
+    </a>
+  {% endfor %}
+  </div>
+</section>
+<section class="feature-grid">
+  <article><span>01</span><h3>Structured notes</h3><p>Open a topic to see explanations, examples, and special tips.</p></article>
+  <article><span>02</span><h3>Premium professional track</h3><p>Advanced professional notes stay locked until your account is upgraded.</p></article>
+  <article><span>03</span><h3>AI coding assistant</h3><p>Ask questions, debug code, explain errors, or request learning exercises.</p></article>
+</section>
+{% endblock %}

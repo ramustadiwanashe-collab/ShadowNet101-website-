@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ page }} | ShadowNet{% endblock %}
+{% block content %}
+<section class="legal">
+<p class="eyebrow">SHADOWNET · EST. 2017</p>
+<h1>{{ page }}</h1>
+{% if page == 'Privacy Policy' %}
+<h2>Data we collect</h2><p>ShadowNet stores account information such as your name, email address, password hash, account status, and basic timestamps required to operate the service.</p>
+<h2>Passwords</h2><p>Passwords are stored as one-way password hashes. ShadowNet does not store plaintext passwords.</p>
+<h2>AI requests</h2><p>When you use the AI assistant, your message is sent from the ShadowNet server to the configured AI provider so the assistant can generate a response. Do not submit secrets, passwords, private keys, or confidential data.</p>
+<h2>Security</h2><p>ShadowNet uses server-side authentication, CSRF protection for state-changing forms, secure cookie settings, and security headers. Production deployment should use HTTPS.</p>
+<h2>Contact and retention</h2><p>Set your production contact email and retention rules before publishing this policy. This template does not claim compliance with any particular jurisdiction.</p>
+{% else %}
+<h2>Use of the service</h2><p>ShadowNet provides educational programming content. You are responsible for how you use the material and AI-generated assistance.</p>
+<h2>Accounts</h2><p>You must provide accurate registration information and keep your password confidential. Do not share an account in a way that bypasses paid access controls.</p>
+<h2>Premium content</h2><p>Professional notes are paid content. Real payment processing must be connected and configured before launch.</p>
+<h2>AI assistant</h2><p>AI output can contain errors. Review generated code before using it in production. Never provide API keys, passwords, tokens, or private credentials.</p>
+<h2>Acceptable use</h2><p>Use ShadowNet for lawful learning and authorized development. Do not use the service to attack systems you do not own or have permission to test.</p>
+{% endif %}
+{% endblock %}

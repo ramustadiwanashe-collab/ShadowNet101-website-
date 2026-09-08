@@ -1,0 +1,6 @@
+<button class="ai-fab" id="aiOpen" aria-label="Open ShadowNet AI Assistant">✦</button>
+<div class="ai-panel" id="aiPanel" aria-hidden="true">
+  <div class="ai-head"><div><strong>ShadowNet AI</strong><small>GPT-5 coding assistant</small></div><button id="aiClose">×</button></div>
+  <div class="ai-messages" id="aiMessages"><div class="ai-msg bot">Hello {{ user['name'] }}. Ask me about {{ name }} or paste an error you want to understand.</div></div>
+  <form id="aiForm"><textarea id="aiInput" maxlength="6000" placeholder="Ask a coding question..." required></textarea><button class="btn primary">Send</button></form>
+</div>
